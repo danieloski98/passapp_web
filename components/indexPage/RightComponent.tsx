@@ -1,4 +1,5 @@
 import Image  from "next/image";
+import PhoneImage from '../../public/Images/phone@2x.png'
 
 const RightComponent = () => {
     return (
@@ -17,7 +18,7 @@ const RightComponent = () => {
             </div>
 
             <div className="flex-1 flex">
-                <Image src="/images/phone@2x.png" alt="phone" width={700} height={500} className="w-full h-full" />
+                <Image src={PhoneImage} alt="phone" className="w-full h-full" />
             </div>
 
         </div>

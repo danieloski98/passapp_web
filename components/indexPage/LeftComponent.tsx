@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import Apple from '../../public/Images/btn-app-store-web.svg'
+import Google from '../../public/images/btn-google-play-web.svg'
 
 const LeftComponent = () => {
     return (
@@ -20,10 +22,14 @@ const LeftComponent = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitatio
                 </p>
 
-                <div className="w-full h-24 flex">
-                        <Image src="/images/btn-app-store-web.svg" alt="appstore logog"  width={150} height={50}  /> 
+                <div className="w-full h-24 flex mt-8">
+                        <div className="w-40 h-16 cursor-pointer">
+                            <Image src={Apple} alt="appstore logog" className="w-full h-full" /> 
+                        </div>
                         <div className="w-4"></div>
-                        <Image src="/images/btn-google-play-web.svg" alt="appstore logog" width={150} height={50} className="ml-4" />
+                        <div className="w-40 h-16 cursor-pointer">
+                            <Image src={Google} alt="appstore logog" className="w-full h-full" />
+                        </div>
                 </div>
             </div>
         </div>
