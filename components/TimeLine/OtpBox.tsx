@@ -18,7 +18,7 @@ const OtpBox = ({ change }: {change: Function}) => {
         }, 3000)
     }
     return (
-        <div className="w-full h-full flex justify-center pt-12">
+        <div className="w-full h-full flex justify-center pt-12 sm:px-5 md:px-5 lg:px-0 xl:px-0">
             <div className="w-96 h-96 rounded bg-white flex flex-col overflow-hidden">
                 <div className="w-full h-1 flex">
                     <div className="w-10 h-full" style={{ backgroundColor: '#2387EB'}}></div>

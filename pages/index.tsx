@@ -16,11 +16,11 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="w-full h-screen">
-        <div className="w-full h-full flex">
-          <div className="w-3/6 h-full">
+        <div className="w-full h-full flex lg:flex-row md:flex-col sm:flex-col">
+          <div className="lg:w-3/6 md:w-full h-full">
             <LeftComponent />
           </div>
-          <div className="flex-1 bg-blue-300 right">
+          <div className="flex-1 xl:bg-blue-300 lg:bg-blue-300 md:bg-white sm:bg-white right">
             <RightComponent />
           </div>
         </div>

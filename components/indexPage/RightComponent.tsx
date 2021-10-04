@@ -6,7 +6,7 @@ const RightComponent = () => {
         <div className="w-full h-full flex flex-col">
 
             {/* header */}
-            <div className="w-full h-24 px-10 flex items-center text-md font-medium justify-between">
+            <div className="w-full h-24 px-10 xl:flex lg:flex sm:hidden md:hidden items-center text-md font-medium justify-between">
                 <p>Home</p>
                 <p>About</p>
                 <p>Features</p>

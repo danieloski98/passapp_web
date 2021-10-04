@@ -7,7 +7,7 @@ import Phizer from  '../../public/Images/phizer2.png'
 const UserTimeLine = () => {
     return (
         <div className="w-full h-full flex justify-center">
-            <div className="w-3/5 h-full flex flex-col">
+            <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full h-full flex flex-col xl:px-0 lg:px-0 md:px-5 sm:px-5">
 
                 {/* header  */}
 
@@ -30,11 +30,11 @@ const UserTimeLine = () => {
 
                 {/* body */}
 
-                <div className="flex-1 flex mt-6">
+                <div className="flex-1 flex mt-6 xl:flex-row lg:flex-row md:flex-col sm:flex-col">
 
                     {/* Vaccine card */}
 
-                    <div className="w-64 h-full flex flex-col">
+                    <div className="xl:w-64 lg:w-64 md:w-full sm:w-full h-full flex flex-col">
                         <h1 className="text-md font-bold">My Vaccine Card</h1>
 
                         <div className="w-full h-10 rounded-md mt-4 bg-dark_blue text-sm text-white flex justify-between items-center px-4 cursor-pointer">
@@ -50,7 +50,7 @@ const UserTimeLine = () => {
 
                         </div>
 
-                        <div className="mt-6 w-full h-32 rounded-md bg-white flex flex-col px-8 justify-center">
+                        <div className="mt-2 w-full h-32 rounded-md bg-white flex flex-col px-8 justify-center">
 
                             <h1 className="text-md font-bold">2nd Vaccine Shot</h1>
                             <p className="font-light text-sm mt-2 text-gray-400">Added June 5, 2021</p>
@@ -62,7 +62,7 @@ const UserTimeLine = () => {
 
                     {/* spacer */}
 
-                    <div className="w-6 h-full"></div>
+                    <div className="xl:w-6 lg:w-6 md:w-0 sm:w-0 xl:h-0 lg:h-0 md:h-6 sm:h-6 h-full"></div>
 
                     {/* timeline */}
 
