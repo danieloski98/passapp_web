@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Apple from '../../public/Images/btn-app-store-web.svg'
-import Google from '../../public/images/btn-google-play-web.svg'
+import Google from '../../public/Images/btn-google-play-web.svg'
 
 const LeftComponent = () => {
     return (
