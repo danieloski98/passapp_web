@@ -1,10 +1,28 @@
-const OtpBox = () => {
+import { PinInput, PinInputField, Spinner } from "@chakra-ui/react"
+import React from 'react';
+
+const OtpBox = ({ change }: {change: Function}) => {
+    const [pin, setPin] = React.useState('');
+    const [loading, setLoading] = React.useState(false);
+
+    const submit = () => {
+        if (pin.length < 4) {
+            alert('Invalid pin');
+            return;
+        }
+        setLoading(true);
+        const timer = setTimeout(() => {
+            setLoading(false);
+            change()
+            clearTimeout(timer);
+        }, 3000)
+    }
     return (
         <div className="w-full h-full flex justify-center pt-12">
             <div className="w-96 h-96 rounded bg-white flex flex-col overflow-hidden">
                 <div className="w-full h-1 flex">
                     <div className="w-10 h-full" style={{ backgroundColor: '#2387EB'}}></div>
-                    <div className="w-16 h-full" style={{ backgroundColor: '#074F96'}}></div>
+                    <div className="w-24 h-full" style={{ backgroundColor: '#074F96'}}></div>
                     <div className="flex-1" style={{ backgroundColor: '#8B3BF8'}}></div>
                     <div className="w-10 h-full" style={{ backgroundColor: '#F4AB57'}}></div>
                 </div>
@@ -16,13 +34,22 @@ const OtpBox = () => {
                     </p>
 
                     <div className="w-full flex justify-center mt-6">
-                        <input className="w-8 h-8 border-2 border-gray-300 mx-3 text-center text-xs" maxLength={1} minLength={1}  />
-                        <input className="w-8 h-8 border-2 border-gray-300 mx-3 text-center text-xs" maxLength={1} minLength={1} />
-                        <input className="w-8 h-8 border-2 border-gray-300 mx-3 text-center text-xs" maxLength={1} minLength={1} />
-                        <input className="w-8 h-8 border-2 border-gray-300 mx-3 text-center text-xs" maxLength={1} minLength={1} />
+                        <PinInput type="number" value={pin} onChange={(e) => setPin(e)} mask otp onComplete={() => alert('done')}>
+                            <PinInputField className="mx-2" />
+                            <PinInputField className="mx-2" />
+                            <PinInputField className="mx-2" />
+                            <PinInputField className="mx-2" />
+                        </PinInput>
                     </div>
 
-                    <button className="w-full h-10 rounded-md bg-main_blue text-white text-sm mt-6">Verify Code</button>
+                    <button disabled={loading} onClick={submit} className="w-full h-10 rounded-md bg-main_blue text-white text-sm mt-6">
+                        {
+                            loading ?
+                            <Spinner size="md" color="white" />
+                            :
+                            <span>Verify Code</span>
+                        }
+                    </button>
                 </div>
             </div>
         </div>

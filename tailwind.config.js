@@ -28,6 +28,7 @@ module.exports = {
       pink: colors.pink,
       trans_blue: '#B2D9FF',
       main_blue: '#2387EB',
+      dark_blue: '#034280',
       light_text: '#00191AA6',
       light_grey: '#F0F3F5',
     },

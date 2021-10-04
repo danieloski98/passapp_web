@@ -1,12 +1,19 @@
-import OtpBox from "../components/TimeLine/OtpBox";
+import React from 'react';
+import OtpBox from "../../components/TimeLine/OtpBox";
+import UserTimeLine from '../../components/TimeLine/timeline';
 
 const TimeLine = () => {
+    const [verified, setVerified] = React.useState(false);
+
+    const change = () => {
+        setVerified(true);
+    }
     return (
-        <div className="w-full h-screen flex flex-col bg-light_grey">
+        <div className="w-full h-screen flex flex-col bg-light_grey overflow-auto pt-5 pb-24">
            
            {/* header */}
 
-           <div className="w-full h-24 flex px-10">
+           <div className="w-full h-24 flex px-10 mb-20">
                <div className="flex-1 flex items-center">
                 <h1 className="text-black font-bold text-2xl">VA
                     <span className="text-main_blue ">XX</span>
@@ -27,7 +34,12 @@ const TimeLine = () => {
 
            {/* body */}
            <div className="flex-1">
-               <OtpBox />
+               {
+                   verified ?
+                   <UserTimeLine />
+                   :
+                   <OtpBox change={change} />
+               }
            </div>
         </div>
     )
