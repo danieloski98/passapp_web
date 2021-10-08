@@ -2,15 +2,73 @@ import React from 'react';
 import OtpBox from "../../components/TimeLine/OtpBox";
 import UserTimeLine from '../../components/TimeLine/timeline';
 import { FiMenu } from 'react-icons/fi';
+import { useRouter } from 'next/router';
+import { Modal, ModalOverlay, ModalContent, ModalBody, Spinner } from '@chakra-ui/react';
+import { IUser } from '../../types/User';
+import url from '../../util/url';
 
 const TimeLine = () => {
+    const otp = React.useRef('');
+    const router = useRouter();
     const [verified, setVerified] = React.useState(false);
+    const [loading, setLoading] = React.useState(true);
+    const [user, setUser] = React.useState({} as IUser);
+    const [id, setId] = React.useState(router.query['user_id']);
+    
+
+    React.useEffect(() => {
+        (async function (){
+           try {
+            if (router.query['user_id'] === null || router.query['user_id'] === undefined) { return }
+            else {
+                const request = await fetch(`${url}/otp/${router.query['user_id']}`);
+                const json = await request.json();
+                if (json.statusCode !== 200) {
+                    alert(json.errorMessage);
+                    console.log(json);
+                }else {
+                    alert(json.successMessage);
+                }
+            }
+            setLoading(false);
+           } catch (error) {
+               setLoading(false);
+               console.log(error);
+           }
+        })()
+    }, [router.query])
 
     const change = () => {
         setVerified(true);
     }
+
+    const verify = async(code: number) => {
+        try {
+            const request = await fetch(`${url}/otp/verify/${code}`);
+            const json = await request.json();
+            console.log(json);
+            setUser(json.data);
+            setVerified(true);
+        } catch (error) {
+            alert('An Error Occured');
+            console.log(error);
+        }
+    }
     return (
         <div className="w-full h-screen flex flex-col bg-light_grey overflow-auto xl:pt-5 lg:pt-5 md:pt-0 sm:pt-0 pb-24">
+
+            {/* modal */}
+            <Modal isOpen={loading} isCentered onClose={() => setLoading(false)} closeOnEsc={false} closeOnOverlayClick={false}>
+                <ModalOverlay />
+                <ModalContent>
+                    <ModalBody>
+                        <div className="w-full h-full flex flex-col items-center justify-center py-5">
+                            <p>Requesting OTP Code</p>
+                            <Spinner size="lg" color="blue" className="mt-4" />
+                        </div>
+                    </ModalBody>
+                </ModalContent>
+            </Modal>
            
            {/* header */}
 
@@ -41,9 +99,9 @@ const TimeLine = () => {
            <div className="flex-1">
                {
                    verified ?
-                   <UserTimeLine />
+                   <UserTimeLine user={user} />
                    :
-                   <OtpBox change={change} />
+                   <OtpBox change={verify} />
                }
            </div>
         </div>

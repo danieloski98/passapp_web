@@ -11,11 +11,8 @@ const OtpBox = ({ change }: {change: Function}) => {
             return;
         }
         setLoading(true);
-        const timer = setTimeout(() => {
-            setLoading(false);
-            change()
-            clearTimeout(timer);
-        }, 3000)
+        change(pin);
+        setLoading(false);
     }
     return (
         <div className="w-full h-full flex justify-center pt-12 sm:px-5 md:px-5 lg:px-0 xl:px-0">
@@ -34,7 +31,7 @@ const OtpBox = ({ change }: {change: Function}) => {
                     </p>
 
                     <div className="w-full flex justify-center mt-6">
-                        <PinInput type="number" value={pin} onChange={(e) => setPin(e)} mask otp onComplete={() => alert('done')}>
+                        <PinInput type="number" value={pin} onChange={(e) => setPin(e)} mask otp>
                             <PinInputField className="mx-2" />
                             <PinInputField className="mx-2" />
                             <PinInputField className="mx-2" />
