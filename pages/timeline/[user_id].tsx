@@ -26,6 +26,7 @@ const TimeLine = () => {
                 if (json.statusCode !== 200) {
                     alert(json.errorMessage);
                     console.log(json);
+                    router.push('/');
                 }else {
                     alert(json.successMessage);
                 }
