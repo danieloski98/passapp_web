@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import NavLink from 'next/Link'
 
 const Contact: NextPage = () => {
     return (
@@ -10,8 +11,12 @@ const Contact: NextPage = () => {
             </div>
 
             <div className="flex-1 flex flex-row xl:justify-end lg:justify-end md:justify-center sm:justify-center sm:items-start md:items-start xl:items-center lg:items-center sm:mt-6 md:mt-6 lg:mt-0 xl:mt-0 ">
-                <button className="w-40 h-12 rounded text-white bg-light_blue text-sm">Contact Us</button>
-                <button className="w-40 h-12 rounded text-black border-2 border-black xl:ml-6 lg:ml-6 md:ml-2 sm:ml-2 text-sm">Give us a call</button>
+                <button className="w-40 h-12 rounded text-white bg-light_blue text-sm">
+                    <NavLink href="/contactus">Contact Us</NavLink>
+                </button>
+                <button className="w-40 h-12 rounded text-black border-2 border-black xl:ml-6 lg:ml-6 md:ml-2 sm:ml-2 text-sm">
+                    <NavLink href="/contactus">Give us a call</NavLink>
+                </button>
             </div>
 
         </div>
