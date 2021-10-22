@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="81" height="41.722" viewBox="0 0 81 41.722">
+  <g id="Group_8" data-name="Group 8" transform="translate(11027 -18064)">
+    <g id="Group_7" data-name="Group 7" transform="translate(-11027 18064)">
+      <g id="Layer_2" data-name="Layer 2" transform="translate(0)">
+        <g id="OBJECTS" transform="translate(0)">
+          <path id="Path_1" data-name="Path 1" d="M33.817,0H18.3V.019H13.38a2.879,2.879,0,0,0-2.529,3.116,3.054,3.054,0,0,0,1.968,3.033h2.064a1.639,1.639,0,0,1,0,3.276H6.438a3.116,3.116,0,0,0,0,6.229H8.494v.019h1.578a1.634,1.634,0,0,1,0,3.263H3.153a3.113,3.113,0,1,0,0,6.227h6.854a1.658,1.658,0,1,1,0,3.314H4.977v-.021h-1.7a3.116,3.116,0,0,0,0,6.229h9.436v-.027h3.02L23.26,5.653h8.678c6.774,0,3.631,9.346-7.33,11.233L23.1,22.606C43.887,20.827,49.115,0,33.817,0Z" transform="translate(-0.04)" fill="#0e83f5"/>
+          <path id="Path_2" data-name="Path 2" d="M14.746,6.292A3.116,3.116,0,1,0,11.63,3.179a3.116,3.116,0,0,0,3.116,3.113Z" transform="translate(-8.535 -0.044)" fill="#438191"/>
+        </g>
+      </g>
+      <text id="ass" transform="translate(37 32.723)" fill="#0e83f5" font-size="26" font-family="League Spartan" font-weight="700"><tspan x="0" y="0">ass</tspan></text>
+    </g>
+  </g>
+</svg>

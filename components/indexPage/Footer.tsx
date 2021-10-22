@@ -1,18 +1,15 @@
+import { NextPage } from "next";
+import Image from 'next/image'
+import Apple from '../../public/Images/btn-app-store-web.svg'
+import Logo from '../../public/Images/logo.svg'
 
-
-const Footer = () => {
+const Footer: NextPage = () => {
     return (
-        <div className="w-full xl:h-64 lg:h-64 md:h-auto sm:h-auto bg-black flex xl:flex-row lg:flex-row md:flex-col sm:flex-col xl:py-0 lg:py-0 md:py-10 sm:py-10">
-            <div className="flex-1 flex items-center justify-center sm:mt-6">
-                <h2 className="font-extrabold text-white text-xl">What PASS Is All About</h2>
-            </div>
-            <div className="flex-1 flex items-center sm:mt-5">
-                <p className=" text-justify text-gray-200 font-regular text-sm mx-10 ">
-                PASS is an app that was created to give you access to your medical information whenever you need it. As Coronavirus cases continue to rise, it’s imperative to keep up with the status of your health. PASS is an all inclusive program that allows you to store your Vaccination ID and keep record of your updated test results. With vaccine mandates going into effect, PASS will allow you to return to normal from simply picking up your phone.
-
-                </p>
-            </div>
-        </div>  
+        <div id="gettheapp" className="w-full h-72 flex flex-col items-center py-10 px-10 justify-center bg-gray-200 xl:px-0 lg:px-0 md:px-10 sm:px-10">
+            <Image src={Logo} alt="appstore logog" className="w-full h-full" />
+            <p className="text-md font-light text-black mt-4 xl:w-96 lg:w-96 md:w-full sm:w-full text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p className="text-sm font-Inter-Regular text-gray-600 mt-5 text-center">Copyright PASS | 2021</p>
+        </div>
     )
 }
 

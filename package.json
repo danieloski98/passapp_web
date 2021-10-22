@@ -14,13 +14,15 @@
     "@dicebear/avatars-bottts-sprites": "^4.9.1",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
+    "formik": "^2.2.9",
     "framer-motion": "^4",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "react-query": "^3.25.0",
-    "recoil": "^0.4.1"
+    "recoil": "^0.4.1",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/node": "^16.10.3",

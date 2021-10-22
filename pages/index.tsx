@@ -1,7 +1,11 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import AboutCard from '../components/indexPage/AboutCard'
+import Contact from '../components/indexPage/Contact'
+import Features from '../components/indexPage/Features'
 import Footer from '../components/indexPage/Footer'
+import GetTheApp from '../components/indexPage/GetTheapp'
 import LeftComponent from '../components/indexPage/LeftComponent'
 import RightComponent from '../components/indexPage/RightComponent'
 import styles from '../styles/Home.module.css'
@@ -26,6 +30,10 @@ const Home: NextPage = () => {
         </div>
       </div>
 
+      <AboutCard />
+      <Features />
+      <Contact />
+      <GetTheApp />
       <Footer />
 
     </div>

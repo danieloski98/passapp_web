@@ -31,6 +31,7 @@ module.exports = {
       dark_blue: '#034280',
       light_text: '#00191AA6',
       light_grey: '#F0F3F5',
+      light_blue: '#2387EB',
     },
     spacing: {
       px: '1px',
