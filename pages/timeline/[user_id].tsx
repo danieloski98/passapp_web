@@ -1,5 +1,5 @@
 import React from 'react';
-import NavLink from 'next/Link'
+import NavLink from 'next/link'
 import { FiX } from 'react-icons/fi'
 import OtpBox from "../../components/TimeLine/OtpBox";
 import UserTimeLine from '../../components/TimeLine/timeline';

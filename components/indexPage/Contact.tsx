@@ -1,5 +1,5 @@
 import { NextPage } from "next";
-import NavLink from 'next/Link'
+import NavLink from 'next/link'
 
 const Contact: NextPage = () => {
     return (

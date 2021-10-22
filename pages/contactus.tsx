@@ -1,5 +1,5 @@
 import { NextPage } from "next"
-import NavLink from 'next/Link'
+import NavLink from 'next/link'
 import { FiMenu } from 'react-icons/fi';
 import ContactForm from "../components/contactus/form";
 import Logo from '../public/Images/logo.svg'
