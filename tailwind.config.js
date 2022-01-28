@@ -32,6 +32,7 @@ module.exports = {
       light_text: '#00191AA6',
       light_grey: '#F0F3F5',
       light_blue: '#2387EB',
+      primary_blue: '#0E83F5'
     },
     spacing: {
       px: '1px',
@@ -272,8 +273,12 @@ module.exports = {
         '"Courier New"',
         'monospace',
       ],
-      'Inter-Bold': ['Inter-Bold'],
-      'Inter-Regular': ['Inter-Regular'] 
+      Inter_Bold: [ "'Inter-Bold'" ],
+      Inter_Regular: [ "'Inter-Regular'" ],
+      Sfb: [ "'SF-BOLD'" ],
+      Sfm: ["'SF-MEDIUM'"],
+      Sfn: ["'SF-NORMAL'"],
+      Sf_b: ["'SF-BLACk'"]
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
