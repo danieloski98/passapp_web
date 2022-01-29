@@ -559,6 +559,7 @@ module.exports = {
       full: '100%',
       min: 'min-content',
       max: 'max-content',
+      80: '20rem'
     },
     objectPosition: {
       bottom: 'bottom',

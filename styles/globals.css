@@ -1,8 +1,10 @@
+html, body {
+  scroll-behavior: smooth;
+}
+
+
 @tailwind base;
 @tailwind components;
-
-
-
 
 
 @font-face { 
