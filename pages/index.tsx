@@ -108,7 +108,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-2/4 flex items-end">
               <div className=" w-full flex items-end ">
-                <Image src="/assests/Feature2.png" alt="pic" style={{ width: '615px', height: '300px', marginLeft: '130px'}}  className=' object-cover' />
+                <Image src="/assests/feature2.png" alt="pic" style={{ width: '615px', height: '300px', marginLeft: '130px'}}  className=' object-cover' />
               </div>
              
             </div>
@@ -126,7 +126,7 @@ const Home: NextPage = () => {
             </div>
             <div className="w-2/4 flex items-center h-full">
               <div className=" w-full h-full flex items-center">
-                <Image src="/assests/Feature3.png" alt="pic" style={{ width: '100%', height: '250px', marginLeft: '0px'}}  className=' object-contain' />
+                <Image src="/assests/feature3.png" alt="pic" style={{ width: '100%', height: '250px', marginLeft: '0px'}}  className=' object-contain' />
               </div>
              
             </div>
