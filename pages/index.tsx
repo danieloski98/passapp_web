@@ -1,7 +1,7 @@
 import React from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Image, Drawer, DrawerOverlay, DrawerBody, DrawerContent } from '@chakra-ui/react'
+import { Image, Drawer, DrawerOverlay, DrawerBody, DrawerContent, Modal, ModalOverlay, ModalContent, ModalBody, Input } from '@chakra-ui/react'
 import { FiArrowRight, FiX, FiPlus, FiMenu } from 'react-icons/fi'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
@@ -35,10 +35,45 @@ const MyDrawer = ({open, close}: {open: boolean, close: Function}) => (
   </Drawer>
 )
 
+const MyModal = ({ open, onClose}: {open: boolean, onClose: Function }) => (
+  <Modal isOpen={open} onClose={() => onClose(false)} size="4xl" isCentered>
+    <ModalOverlay />
+    <ModalContent>
+      <ModalBody padding="0px">
+        <div  className="flex xl:flex-row xl:h-modalH lg:modalH md:h-auto sm:h-auto lg:flex-row md:flex-col sm:flex-col w-full">
+          <div style={{ backgroundColor: '#FCF0F0'}} className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full xl:h-full lg:h-full md:h-2/4 sm:h-2/4 xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-center">
+            <Image src="/assests/phone.jpg" alt='phone' />
+          </div>
+          <div className="flex-1 p-10 flex flex-col">
+            <div className="w-full flex justify-end">
+              <FiX size={30} color="grey" onClick={() => onClose(false)} />
+            </div>
+            <div className="flex-1 flex flex-col justify-center">
+              <h3 className='font-Sfn text-4xl'>Get Off</h3>
+              <Input borderWidth="0px" backgroundColor="#F2F2F2" borderRadius="0px" className='w-full h-12 bg-gray-200 mt-4' placeholder='email' />
+              <button style={{ backgroundColor: '#0E83F5'}} className="w-full h-12 mt-2 text-white text-sm font-Sfn">Continue</button>
+              <p className='text-gray-400 mt-4 text-sm font-Sfn'>Exclusions apply, offers cannot be combined</p>
+            </div>
+          </div>
+        </div>
+      </ModalBody>
+    </ModalContent>
+  </Modal>
+)
+
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
+  const [showModal, setShowModal] = React.useState(false);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowModal(true);
+    }, 5000)
+  }, [])
+
   return (
     <div className="w-screen h-auto">
+      <MyModal open={showModal} onClose={setShowModal} />
       <Head>
         <title>Pass APP</title>
         <meta name="description" content="Covid 19 vaccination and test result checking app" />
