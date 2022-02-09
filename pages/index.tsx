@@ -1,5 +1,6 @@
 import React from 'react';
 import type { NextPage } from 'next'
+import Script from 'next/script'
 import Head from 'next/head'
 import { Image, Drawer, DrawerOverlay, DrawerBody, DrawerContent, Modal, ModalOverlay, ModalContent, ModalBody, Input } from '@chakra-ui/react'
 import { FiArrowRight, FiX, FiPlus, FiMenu } from 'react-icons/fi'
@@ -73,11 +74,22 @@ const Home: NextPage = () => {
 
   return (
     <div className="w-screen h-auto">
+      <Script 
+        id="mailchimp"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            !function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/c72b39410028c4afc5fb0d25e/5021bb74d3f1b911e04acf50d.js");
+          `,
+        }}
+      
+      />
       <MyModal open={showModal} onClose={setShowModal} />
       <Head>
         <title>Pass APP</title>
         <meta name="description" content="Covid 19 vaccination and test result checking app" />
         <link rel="icon" href="/favicon.ico" />
+        
       </Head>
 
       <MyDrawer open={open} close={setOpen} />
@@ -379,3 +391,4 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
