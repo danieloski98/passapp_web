@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import type { NextPage } from 'next'
 import Script from 'next/script'
@@ -145,7 +146,7 @@ const Home: NextPage = () => {
       <div  className="w-full flex justify-center">
         <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full md:px-10 sm:px-10 h-auto">
           <p className='font-Sfn text-gray-500 leading-8 text-md'>
-          <span className='text-black'>What PASS is all about</span> - Have your current health status readily available so you can safely get back to living your best life and doing the things you love. PASS is a digital health app that you can use to show proof of COVID-19 status and medical test results to easily meet any state or country requirements. PASS’ uniquely designed to match the lives of its unique users. PASS is your PASSport to nightlife, travel and more!
+          <span className='text-black'>What PASS is all about</span> - Have your current health status readily available so you can safely get back to living your best life and doing the things you love. PASS is a digital health app that you can use to show proof of COVID-19 status and medical test results to easily meet any state or country requirements. PASS uniquely designed to match the lives of its unique users. PASS is your PASSport to nightlife, travel and more!
           </p>
         </div>
       </div>
@@ -315,6 +316,7 @@ const Home: NextPage = () => {
             <h3 className='font-Sfb text-xl text-black'>How secure are my test results?</h3>
             <FiPlus size={25} color="grey" />
           </div>
+          <p className='pr-6 text-md text-gray-500 font-Sfn mt-4'>We ensure privacy through a two-way authentication process. The app also gives you the power to decide who you want to share your info with.</p>
          
         </div>
 
@@ -323,14 +325,33 @@ const Home: NextPage = () => {
             <h3 className='font-Sfb text-xl text-black'>How is submitted information verified?</h3>
             <FiPlus size={25} color="grey" />
           </div>
-         
+         <p className='text-md text-gray-500 font-Sfn mt-4'>
+          Submitted information goes through 3 stages of verification:
+         </p>
+         <ol className='list-decimal list-inside mt-4 mb-4 text-md text-gray-500 font-Sfn'>
+          <li className='mb-4'>
+          When you upload pictures or digital copies of your vaccine card (front and back) or test results, the status will be shown as pending until verified. 
+          </li>
+          <li className='mb-4'>
+          You will have to provide the location and name of the place you were vaccinated to ensure that it aligns with information uploaded in stage 1.
+          </li>
+          <li className='mb-4'>
+          We will use state immunization records to verify the information submitted. Once all information is checked, your status will be verified.
+          </li>
+         </ol>
+          
+          <p className='text-md text-gray-500 font-Sfn mt-0'>
+          *If your information is able to be verified in stages 1 and 2 but not 3, your status will still show as pending.
+          </p> 
+
+        
         </div>
       </div>
 
       <div className="w-full mt-0 h-auto pb-10 bg-gray-100 flex justify-center">
         <div className='xl:w-3/5 lg:w-3/5 md:w-full sm:w-full h-full mt-16 flex flex-col items-center'>
             <h1 className=' font-Sf_b text-center xl:text-6xl lg:text-6xl md:text-4xl sm:text-4xl'>Download the <br /> app to get started</h1>
-            <p className=' font-Sfm text-center text-md text-gray-500 mt-8'>A new, easy way to keep health record and manage <br /> your vaccination history </p>
+            <p className=' font-Sfm text-center text-md text-gray-500 mt-8'>It only takes a few steps to make your life easier!</p>
             <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full  h-16 mt-16 flex justify-center">
 
               {/* google button */}
