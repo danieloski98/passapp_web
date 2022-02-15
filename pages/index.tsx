@@ -26,9 +26,17 @@ const MyDrawer = ({open, close}: {open: boolean, close: Function}) => (
         </div>
 
         <div className="flex-1 flex flex-col justify-start pt-12">
-          <p className='text-2xl font-Sfm text-black mb-10'>Features</p>
-          <p className='text-2xl font-Sfm text-black mb-10'>How it works</p>
-          <p className='text-2xl font-Sfm text-black mb-10'>About</p>
+          <Link href='#features' passHref>
+            <p className='text-2xl font-Sfm text-black mb-10'>Features</p>
+          </Link>
+          
+          <Link href='#how' passHref>
+            <p className='text-2xl font-Sfm text-black mb-10'>How it works</p>
+          </Link>
+          
+          <Link href='#about' passHref>
+            <p className='text-2xl font-Sfm text-black mb-10'>About</p>
+          </Link>
 
           <button className='w-32 h-12 rounded-full mt-12 bg-primary_blue text-white font-Sfn text-sm'>Get app</button>
         </div>
@@ -51,10 +59,10 @@ const MyModal = ({ open, onClose}: {open: boolean, onClose: Function }) => (
               <FiX size={30} color="grey" onClick={() => onClose(false)} />
             </div>
             <div className="flex-1 flex flex-col justify-center">
-              <h3 className='font-Sfn text-4xl'>Get Off</h3>
+              <h3 className='font-Sfn text-4xl'>Sign Up</h3>
               <Input borderWidth="0px" backgroundColor="#F2F2F2" borderRadius="0px" className='w-full h-12 bg-gray-200 mt-4' placeholder='email' />
               <button style={{ backgroundColor: '#0E83F5'}} className="w-full h-12 mt-2 text-white text-sm font-Sfn">Continue</button>
-              <p className='text-gray-400 mt-4 text-sm font-Sfn'>Exclusions apply, offers cannot be combined</p>
+              <p className='text-gray-400 mt-4 text-sm font-Sfn'>Your medical records in one place.</p>
             </div>
           </div>
         </div>
@@ -99,21 +107,20 @@ const Home: NextPage = () => {
             <Link href='#features' passHref><p className='mr-8 cursor-pointer font-SF_NORMAL'>Features</p></Link>
             <Link href='#how' passHref><p className='mr-8 cursor-pointer'>How it works</p></Link>
             <Link href='#about' passHref><p className='mr-8 cursor-pointer'>About</p></Link>
-            <button className='w-24 h-10 rounded-full text-white bg-primary_blue'>Get Pass</button>
+            <button onClick={() => setShowModal(true)} className='w-24 h-10 rounded-full text-white bg-primary_blue'>Get Pass</button>
           </div>
         </div>
 
       </div>
-
       <div className="w-full h-auto pt-24 flex xl:justify-center lg:justify-center md:justify-start sm:justify-start">
         <div className='xl:w-3/5 lg:w-3/5 md:w-full sm:w-full h-full mt-16 flex flex-col items-center'>
-          <h1 className=' font-Sf_b text-center xl:text-6xl lg:text-6xl md:text-4xl sm:text-4xl'>Your vaccination ID <br className='xl:hidden lg:hidden md:block sm:block' />  all <br className='xl:block lg:block md:hidden sm:hidden' /> in  <span className='text-primary_blue'>one place.</span> </h1>
-          <p className=' font-Sfm text-center text-md text-gray-500 mt-8'>A new, easy way to keep health record and manage <br /> your vaccination history </p>
+          <h1 className=' font-Sf_b text-center xl:text-6xl lg:text-6xl md:text-4xl sm:text-4xl'>Your vaccination ID and rest results <br className='xl:hidden lg:hidden md:block sm:block' />  all <br className='xl:block lg:block md:hidden sm:hidden' /> in  <span className='text-primary_blue'>one place.</span> </h1>
+          <p className=' font-Sfm text-center text-md text-gray-500 mt-8'>A new, easy way to keep and manage your <br /> health record history </p>
           <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full  h-16 mt-16 flex justify-center">
 
             {/* google button */}
-            <div className="w-40 h-full bg-black text-white rounded-full mr-5 flex p-4 items-center font-Sfm text-sm">
-              <Image src="/assests/gpw.svg" alt="googleplay" className='w-8 h-8' />
+            <div onClick={() => setShowModal(true)} className="w-40 h-full bg-black text-white rounded-full mr-5 flex p-4 items-center font-Sfm text-sm cursor-pointer">
+              <Image src="/assests/gpw.svg" alt="googleplay" className='w-6 h-6' />
               <div className="flex flex-col flex-1 items-center">
                 <p className='text-xs font-Sfn'>Download on</p>
                 <p className='text-lg font-Sfn'>Google Play</p>
@@ -121,8 +128,8 @@ const Home: NextPage = () => {
             </div>
 
               {/* apple button */}
-            <div className="w-40 h-full bg-black text-white rounded-full mr-0 flex p-4 items-center font-Sfm text-sm">
-              <Image src="/assests/aw.svg" alt="googleplay" className='w-8 h-8' />
+            <div onClick={() => setShowModal(true)} className="w-40 h-full bg-black text-white rounded-full mr-0 flex p-4 items-center font-Sfm text-sm cursor-pointer">
+              <Image src="/assests/aw.svg" alt="googleplay" className='w-6 h-6' />
               <div className="flex flex-col flex-1 items-center">
                 <p className='text-xs font-Sfn'>Download on</p>
                 <p className='text-lg font-Sfn'>Apple Store</p>
@@ -355,8 +362,8 @@ const Home: NextPage = () => {
             <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full  h-16 mt-16 flex justify-center">
 
               {/* google button */}
-              <div className="w-40 h-full bg-transparent border-2 border-gray-200 text-black rounded-full mr-5 flex p-4 items-center font-Sfm text-sm">
-                <Image src="/assests/gb.svg" alt="googleplay" className='w-8 h-8' />
+              <div onClick={() => setShowModal(true)} className="w-40 h-full bg-transparent border-2 border-gray-200 text-black rounded-full mr-5 flex p-4 items-center font-Sfm text-sm cursor-pointer">
+                <Image src="/assests/gb.svg" alt="googleplay" className='w-6 h-6' />
                 <div className="flex flex-col flex-1 items-center">
                   <p className='text-xs font-Sfn'>Download on</p>
                   <p className='text-lg font-Sfn'>Google Play</p>
@@ -364,8 +371,8 @@ const Home: NextPage = () => {
               </div>
 
                 {/* apple button */}
-              <div className="w-40 h-full bg-transparent border-2 border-gray-200 text-black rounded-full mr-0 flex p-4 items-center font-Sfm text-sm">
-                <Image src="/assests/ab.svg" alt="googleplay" className='w-8 h-8' />
+              <div onClick={() => setShowModal(true)} className="w-40 h-full bg-transparent border-2 border-gray-200 text-black rounded-full mr-0 flex p-4 items-center font-Sfm text-sm cursor-pointer">
+                <Image src="/assests/ab.svg" alt="googleplay" className='w-6 h-6' />
                 <div className="flex flex-col flex-1 items-center">
                   <p className='text-xs font-Sfn'>Download on</p>
                   <p className='text-lg font-Sfn'>Apple Store</p>
