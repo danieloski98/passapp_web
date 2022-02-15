@@ -114,7 +114,7 @@ const Home: NextPage = () => {
       </div>
       <div className="w-full h-auto pt-24 flex xl:justify-center lg:justify-center md:justify-start sm:justify-start">
         <div className='xl:w-3/5 lg:w-3/5 md:w-full sm:w-full h-full mt-16 flex flex-col items-center'>
-          <h1 className=' font-Sf_b text-center xl:text-6xl lg:text-6xl md:text-4xl sm:text-4xl'>Your vaccination ID and rest results <br className='xl:hidden lg:hidden md:block sm:block' />  all <br className='xl:block lg:block md:hidden sm:hidden' /> in  <span className='text-primary_blue'>one place.</span> </h1>
+          <h1 className=' font-Sf_b text-center xl:text-6xl lg:text-6xl md:text-4xl sm:text-4xl'>Your vaccination ID and test results <br className='xl:hidden lg:hidden md:block sm:block' />  all <br className='xl:block lg:block md:hidden sm:hidden' /> in  <span className='text-primary_blue'>one place.</span> </h1>
           <p className=' font-Sfm text-center text-md text-gray-500 mt-8'>A new, easy way to keep and manage your <br /> health record history </p>
           <div className="xl:w-3/5 lg:w-3/5 md:w-full sm:w-full  h-16 mt-16 flex justify-center">
 
