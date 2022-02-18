@@ -51,7 +51,7 @@ const MyModal = ({ open, onClose}: {open: boolean, onClose: Function }) => (
     <ModalContent>
       <ModalBody padding="0px">
         <div  className="flex xl:flex-row xl:h-modalH lg:modalH md:h-auto sm:h-auto lg:flex-row md:flex-col sm:flex-col w-full">
-          <div style={{ backgroundColor: '#FCF0F0'}} className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full xl:h-full lg:h-full md:h-2/4 sm:h-2/4 xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-center">
+          <div style={{ backgroundColor: '#FCF0F0' }} className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full xl:h-full lg:h-full md:h-2/4 sm:h-2/4 xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-center">
             <Image src="/assests/phone.jpg" alt='phone' />
           </div>
           <div className="flex-1 p-10 flex flex-col">
@@ -77,7 +77,7 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      setShowModal(true);
+      // setShowModal(true);
     }, 5000)
   }, [])
 
@@ -174,13 +174,15 @@ const Home: NextPage = () => {
                 <FiArrowRight color="gray" size={25} />
               </button>
             </div>
-            <div className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full flex items-end">
-              <div className=" w-full xl:flex lg:flex md:hidden sm:hidden items-end">
-                <Image src="/assests/Feature1.png" alt="pic" style={{ width: '615px', height: '300px', marginLeft: '-200px'}}  className=' object-cover' />
+            <div className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full flex items-start">
+
+              <div className=" w-full flex-1 xl:flex lg:flex md:hidden sm:hidden items-start">
+                <Image src="/Images/Feature_1_mobile.png" alt="pic"  className='' style={{ marginTop: '-500px'}} />
               </div>
 
               <div className=" w-full xl:hidden lg:hidden md:flex sm:flex items-end">
-                <Image src="/assests/Feature1.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' />
+                <Image src="/Images/Feature_1_mobile.png" alt="pic"  className='' style={{ marginTop: '-300px'}} />
+                {/* <Image src="/assests/Feature_1_mobile.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' /> */}
               </div>
              
             </div>
@@ -196,15 +198,15 @@ const Home: NextPage = () => {
                 <FiArrowRight color="gray" size={25} />
               </button>
             </div>
-            <div className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full flex items-end">
+            <div className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full flex items-start">
 
-              <div className=" w-full xl:flex lg:flex md:hidden sm:hidden items-end">
-                <Image src="/assests/feature2.png" alt="pic" style={{ width: '615px', height: '300px', marginLeft: '130px'}}  className=' object-cover' />
+            <div className=" w-full flex-1 xl:flex lg:flex md:hidden sm:hidden items-start">
+                <Image src="/Images/Feature_2_mobile.png" alt="pic"  className='' style={{ marginTop: '-500px'}} />
               </div>
 
               <div className=" w-full xl:hidden lg:hidden md:flex sm:flex items-end">
-                <Image src="/assests/feature2.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '80px'}}  className=' object-cover' />
-                {/* <Image src="/assests/Feature1.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' /> */}
+                <Image src="/Images/Feature_2_mobile.png" alt="pic"  className='' style={{ marginTop: '-300px'}} />
+                {/* <Image src="/assests/Feature_1_mobile.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' /> */}
               </div>
              
             </div>
@@ -220,17 +222,15 @@ const Home: NextPage = () => {
                 <FiArrowRight color="gray" size={25} />
               </button>
             </div>
-            <div className="w-2/4 flex items-center h-full">
+            <div className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full flex items-center h-full">
 
-            <div className=" w-full xl:flex lg:flex md:hidden sm:hidden items-end">
-                <Image src="/assests/feature3.png" alt="pic" style={{ width: '100%', height: '250px', marginLeft: '0px'}}  className=' object-contain' />
-                {/* <Image src="/assests/feature2.png" alt="pic" style={{ width: '615px', height: '300px', marginLeft: '130px'}}  className=' object-cover' /> */}
+              <div className=" w-full flex-1 xl:flex lg:flex md:hidden sm:hidden items-start">
+                <Image src="/Images/Feature_3_mobile.png" alt="pic"  className='' style={{ marginTop: '0px'}} />
               </div>
 
-              <div className=" w-full xl:hidden lg:hidden md:flex sm:flex items-end">
-                <Image src="/assests/feature3.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '80px'}}  className=' object-contain' />
-                {/* <Image src="/assests/feature2.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '80px'}}  className=' object-cover' /> */}
-                {/* <Image src="/assests/Feature1.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' /> */}
+              <div className="flex-1 w-full h-full xl:hidden lg:hidden md:flex sm:flex items-start justify-center bg-re">
+                <Image src="/Images/Feature_3_mobile.png" alt="pic"  className='' style={{ marginTop: '20px'}} />
+                {/* <Image src="/assests/Feature_1_mobile.png" alt="pic" style={{ width: '715px', height: '150px', marginLeft: '-100px'}}  className=' object-cover' /> */}
               </div>
 
              
@@ -282,7 +282,7 @@ const Home: NextPage = () => {
 
             <div className="flex-1 flex flex-col py-6 justify-center px-2">
               <div className="w-20 h-20">
-                <Image src="/assests/step_1.png" alt="icon" className='w-full h-full' />
+                <Image src="/Images/step_3 icon.png" alt="icon" className='w-full h-full' />
               </div>
               <h3 className='text-2xl font-Sfb mt-6 text-black'>Generation of your <br /> QR code</h3>
               <p className='font-Sfn text-md text-gray-500 mt-4'>A QR code is generated to store your personal information</p>
@@ -296,7 +296,7 @@ const Home: NextPage = () => {
 
             <div className="flex-1 flex flex-col py-6 justify-center px-2">
               <div className="w-20 h-20">
-                <Image src="/assests/step_2.png" alt="icon" className='w-full h-full' />
+                <Image src="/Images/step_4 icon.png" alt="icon" className='w-full h-full' />
               </div>
               <h3 className='text-2xl font-Sfb mt-6 text-black'>Share the QR code </h3>
               <p className='font-Sfn text-md text-gray-500 mt-4'>Share the QR code to generate a one-time use passcode that allows your results to be shared with the person you choose</p>
