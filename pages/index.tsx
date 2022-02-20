@@ -3,10 +3,11 @@ import React from 'react';
 import type { NextPage } from 'next'
 import Script from 'next/script'
 import Head from 'next/head'
-import { Image, Drawer, DrawerOverlay, DrawerBody, DrawerContent, Modal, ModalOverlay, ModalContent, ModalBody, Input } from '@chakra-ui/react'
+import { Image, Drawer, DrawerOverlay, DrawerBody, DrawerContent, Modal, ModalOverlay, ModalContent, ModalBody, Input, Spinner, useToast } from '@chakra-ui/react'
 import { FiArrowRight, FiX, FiPlus, FiMenu } from 'react-icons/fi'
 import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
+import url from '../util/url';
 
 const MyDrawer = ({open, close}: {open: boolean, close: Function}) => (
   <Drawer isOpen={open} onClose={() => close(false)} closeOnEsc closeOnOverlayClick>
@@ -45,31 +46,62 @@ const MyDrawer = ({open, close}: {open: boolean, close: Function}) => (
   </Drawer>
 )
 
-const MyModal = ({ open, onClose}: {open: boolean, onClose: Function }) => (
-  <Modal isOpen={open} onClose={() => onClose(false)} size="4xl" isCentered>
-    <ModalOverlay />
-    <ModalContent>
-      <ModalBody padding="0px">
-        <div  className="flex xl:flex-row xl:h-modalH lg:modalH md:h-auto sm:h-auto lg:flex-row md:flex-col sm:flex-col w-full">
-          <div style={{ backgroundColor: '#FCF0F0' }} className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full xl:h-full lg:h-full md:h-2/4 sm:h-2/4 xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-center">
-            <Image src="/assests/phone.jpg" alt='phone' />
-          </div>
-          <div className="flex-1 p-10 flex flex-col">
-            <div className="w-full flex justify-end">
-              <FiX size={30} color="grey" onClick={() => onClose(false)} />
+const MyModal = ({ open, onClose}: {open: boolean, onClose: Function }) => {
+  const [email, setEmail] = React.useState('');
+  const [loading, setLoading] = React.useState(false);
+  const toast = useToast();
+
+  const submit = async () => {
+    setLoading(true);
+    const request = await fetch(`${url}/emailcollector`, {
+      method: 'post',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify({ email }),
+    });
+    const json = await request.json();
+    setLoading(false);
+    toast({
+      title: 'Alert',
+      description: json.successMessage,
+      status: 'success',
+      duration: 4000,
+      isClosable: true,
+      position: 'top',
+    });
+    onClose(false);
+
+  }
+  return (
+    <Modal isOpen={open} onClose={() => onClose(false)} size="4xl" isCentered>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalBody padding="0px">
+          <div  className="flex xl:flex-row xl:h-modalH lg:modalH md:h-auto sm:h-auto lg:flex-row md:flex-col sm:flex-col w-full">
+            <div style={{ backgroundColor: '#FCF0F0' }} className="xl:w-2/4 lg:w-2/4 md:w-full sm:w-full xl:h-full lg:h-full md:h-2/4 sm:h-2/4 xl:flex lg:flex md:hidden sm:hidden flex-col items-center justify-center">
+              <Image src="/assests/phone.jpg" alt='phone' />
             </div>
-            <div className="flex-1 flex flex-col justify-center">
-              <h3 className='font-Sfn text-4xl'>Sign Up</h3>
-              <Input borderWidth="0px" backgroundColor="#F2F2F2" borderRadius="0px" className='w-full h-12 bg-gray-200 mt-4' placeholder='email' />
-              <button style={{ backgroundColor: '#0E83F5'}} className="w-full h-12 mt-2 text-white text-sm font-Sfn">Continue</button>
-              <p className='text-gray-400 mt-4 text-sm font-Sfn'>Your medical records in one place.</p>
+            <div className="flex-1 p-10 flex flex-col">
+              <div className="w-full flex justify-end">
+                <FiX size={30} color="grey" onClick={() => onClose(false)} />
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <h3 className='font-Sfn text-4xl'>Sign Up</h3>
+                <Input borderWidth="0px" backgroundColor="#F2F2F2" borderRadius="0px" className='w-full h-12 bg-gray-200 mt-4' placeholder='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                <button onClick={submit} style={{ backgroundColor: '#0E83F5'}} className="w-full h-12 mt-2 text-white text-sm font-Sfn">
+                  {loading && <Spinner size="md" color="white" />}
+                   {!loading && <span>Continue</span>}
+                </button>
+                <p className='text-gray-400 mt-4 text-sm font-Sfn'>Your medical records in one place.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </ModalBody>
-    </ModalContent>
-  </Modal>
-)
+        </ModalBody>
+      </ModalContent>
+    </Modal>
+  )
+}
 
 const Home: NextPage = () => {
   const [open, setOpen] = React.useState(false);
@@ -77,7 +109,7 @@ const Home: NextPage = () => {
 
   React.useEffect(() => {
     const timeout = setTimeout(() => {
-      // setShowModal(true);
+      setShowModal(true);
     }, 5000)
   }, [])
 
